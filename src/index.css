@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  /* High-End Typography */
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+  
+  /* Monochromatic Palette */
+  --color-brand-black: #0a0a0a;
+  --color-brand-white: #fafafa;
+  --color-brand-grey: #4a4a4a;
+  --color-brand-light-grey: #e5e5e5;
+
+  /* Custom Animations for "Flatness" Prevention */
+  --animate-fade-in-up: fade-in-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-subtle-zoom: subtle-zoom 20s ease-in-out infinite alternate;
+
+  @keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes subtle-zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+  }
+}
+
+/* Global Reset & Smooth Scrolling */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-brand-white text-brand-black antialiased;
+  }
+}
